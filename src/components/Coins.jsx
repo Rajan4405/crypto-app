@@ -53,7 +53,7 @@ const Coins = () => {
 
           </HStack>
         </RadioGroup>
-        <HStack wrap={"wrap"}>
+        <HStack wrap={"wrap"} justifyContent={"space-evenly"}>
           {
             coins.map((i) => (
               <CoinCard id={i.id} key={i.id} name={i.name} price={i.current_price} img={i.image} symbol={i.symbol} currencySymbol={currencySymbol} />
@@ -64,7 +64,7 @@ const Coins = () => {
         <HStack w={"full"} overflowX={"auto"} p={"8"}>
           {
             btns.map((item, index) =>
-              <Button bgColor={"blackAlpha.900"} color={"white"} onClick={() => changePage(index + 1)}>
+              <Button key={index} bgColor={"blackAlpha.900"} color={"white"} onClick={() => changePage(index + 1)}>
                 {index + 1}
               </Button>
             )
